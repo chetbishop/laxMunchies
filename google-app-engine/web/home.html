@@ -1,0 +1,25 @@
+{{/* HTML body for searching for anime */}}
+{{define "home"}}
+<div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                     	<h1>laxMunchies</h1>
+				<p>Keep track of your favorite TV shows, anime, movies, and music</p>
+                    </div>
+			</div>
+		<div class="row">
+		<div class="col-md-4">
+                        <h2>Anime</h2>
+			<p>Anime info is from the AniDB HTTP API.</p>
+                        <table class="table table-condensed">
+
+					{{range .Anime}}
+					<tr>					
+					<td><a href="/anime/{{.Aid}}/">{{.Name}}</td>
+					</tr>
+					{{end}}
+			</table>
+            </div>
+	</div>
+        </div> <!-- #Container-fluid -->
+{{end}}
